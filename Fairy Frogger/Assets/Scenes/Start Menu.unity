@@ -507,7 +507,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 175}
-  m_SizeDelta: {x: 424.5793, y: 91.4039}
+  m_SizeDelta: {x: 557.1106, y: 79.3556}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &659736839
 MonoBehaviour:
@@ -542,7 +542,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Witch's Hold
+  m_Text: The Witch's Hold
 --- !u!222 &659736840
 CanvasRenderer:
   m_ObjectHideFlags: 0
