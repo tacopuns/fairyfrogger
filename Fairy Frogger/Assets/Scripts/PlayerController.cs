@@ -5,7 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
-{   public bool gameOver = false;
+{
+    public AudioClip sparkleSound;
+    public AudioClip wingSound;    
+
+
+    public bool gameOver = false;
     public Text WinText;
     public AudioClip loseClip;
     public AudioClip collectibleSound;
@@ -39,7 +44,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     {   
+
+        rigidbody2d.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+
+        {   
         horizontal = Input.GetAxisRaw("Horizontal");
          vertical = Input.GetAxisRaw("Vertical"); 
         
@@ -71,7 +79,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-    rigidbody2d.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    
     }
    
    }
