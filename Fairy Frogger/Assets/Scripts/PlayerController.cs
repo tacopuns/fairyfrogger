@@ -6,16 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public AudioClip sparkleSound;
-    public AudioClip wingSound;    
+    public AudioSource audioSource;
+
+
+    public AudioClip collectibleSound;
+    public AudioClip winClip;
+    public AudioClip loseClip;
+    public AudioClip hitSound;
+
 
 
     public bool gameOver = false;
     public Text WinText;
-    public AudioClip loseClip;
-    public AudioClip collectibleSound;
-    public AudioClip winClip;
-    public AudioClip hitSound; 
+
     public int currentHealth = 3;
     public Text HealthText;
     public static int level;
@@ -25,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
     
-    AudioSource audioSource;
+
 
     private Rigidbody2D rb;
     public float runSpeed = 20.0f;
@@ -39,12 +42,12 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         HealthText.text = currentHealth.ToString();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
         rigidbody2d.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
 
         {   
@@ -53,7 +56,7 @@ public class PlayerController : MonoBehaviour
         
         
        }
-    if (currentHealth < 0)
+    if (currentHealth < 1)
         {
            audioSource.PlayOneShot (loseClip,2);
                     WinText.text = "You Lose! Press R to restart.";
@@ -61,6 +64,7 @@ public class PlayerController : MonoBehaviour
                     Destroy(gameObject);
 
 		}
+
     
     if (Input.GetKey(KeyCode.R))
      {
@@ -77,10 +81,7 @@ public class PlayerController : MonoBehaviour
      }
     
     }
-    void FixedUpdate()
-    {
-    
-    }
+
    
    }
 }
