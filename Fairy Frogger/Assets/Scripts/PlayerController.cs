@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
            audioSource.PlayOneShot (loseClip,2);
            LosePanel.SetActive(true);
            gameOver = true;
+           
 		}
             
         if (Score == 1) 
