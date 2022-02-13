@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         HealthText.text = "Lives:" + currentHealth.ToString();
         LosePanel.SetActive(false);
+        WinPanel.SetActive(false);
     }
 
     // Update is called once per frame
