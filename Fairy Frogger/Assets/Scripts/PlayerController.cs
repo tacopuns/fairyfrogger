@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour
     public Text ScoreText;
     public int Score = 0;
     public bool gameOver = false;
-    public Text WinText;
+    public GameObject WinPanel;
+    public GameObject LosePanel;
 
     public int currentHealth = 3;
     public Text HealthText;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         HealthText.text = "Lives:" + currentHealth.ToString();
+        LosePanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -54,8 +56,8 @@ public class PlayerController : MonoBehaviour
      if (currentHealth < 1)
         {
            audioSource.PlayOneShot (loseClip,2);
-                    WinText.text = "You Lose!";
-                    gameOver = true;
+           LosePanel.SetActive(true);
+           gameOver = true;
 		}
             
         if (Score == 1) 
