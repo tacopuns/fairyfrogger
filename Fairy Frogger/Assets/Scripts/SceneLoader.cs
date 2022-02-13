@@ -8,11 +8,18 @@ public class SceneLoader : MonoBehaviour
 
     public GameObject StartPanel;
     public GameObject ControlsPanel;
+    public GameObject PausePanel;
 
     public void QuitGame()
     {
         Application.Quit();
         Debug.Log("Quit!");
+    }
+
+
+    public void Start()
+    {
+        PausePanel.SetActive(false);
     }
 
     public void OpenPanel()
@@ -34,7 +41,15 @@ public class SceneLoader : MonoBehaviour
     public void PlayButton()
     {
         SceneManager.LoadScene("Main");
-        Debug.Log("it work");
+    }
+
+    public void OpenPausePanel()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PausePanel.SetActive(true);
+        }
+
     }
 
 
