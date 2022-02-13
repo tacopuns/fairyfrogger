@@ -7,15 +7,13 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public AudioSource audioSource;
-
-
     public AudioClip collectibleSound;
     public AudioClip winClip;
     public AudioClip loseClip;
     public AudioClip hitSound;
-
-
-
+   public GameObject points;
+    public Text ScoreText;
+    public int Score = 0;
     public bool gameOver = false;
     public Text WinText;
 
@@ -28,8 +26,6 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
     
-
-
     private Rigidbody2D rb;
     public float runSpeed = 20.0f;
     private Vector2 moveVelocity;
@@ -41,8 +37,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        HealthText.text = currentHealth.ToString();
-
+        HealthText.text = "Lives:" + currentHealth.ToString();
     }
 
     // Update is called once per frame
@@ -56,23 +51,21 @@ public class PlayerController : MonoBehaviour
         
         
        }
-    if (currentHealth < 1)
+     if (currentHealth < 1)
         {
            audioSource.PlayOneShot (loseClip,2);
-                    WinText.text = "You Lose! Press R to restart.";
+                    WinText.text = "You Lose!";
                     gameOver = true;
-                    Destroy(gameObject);
 
 		}
-
+            
+        if (Score == 1) 
+                 {
+                    SceneManager.LoadScene("Lvl2");
+                    level++;
+                 }
     
-    if (Input.GetKey(KeyCode.R))
-     {
-        if(gameOver == true)
     
-      {
-        SceneManager.LoadScene("One");
-        }
     
       if (Input.GetKey("escape"))
     
@@ -81,7 +74,11 @@ public class PlayerController : MonoBehaviour
      }
     
     }
-
-   
-   }
+    public void ChangeScore (int scoreamount)
+    { 
+       Score = Score + scoreamount;
+       ScoreText.text = "Score:" + Score.ToString();
+       
+    }
 }
+
