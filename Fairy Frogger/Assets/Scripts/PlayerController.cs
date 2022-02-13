@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
        }
      if (currentHealth < 1)
         {
-           audioSource.PlayOneShot (loseClip,2);
+           audioSource.PlayOneShot (loseClip,1);
            LosePanel.SetActive(true);
            gameOver = true;
            
@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
             
         if (Score == 1) 
                  {
+                    audioSource.PlayOneShot(collectibleSound, 1);
                     SceneManager.LoadScene("Lvl2");
                     level++;
                  }
@@ -85,13 +86,14 @@ public class PlayerController : MonoBehaviour
     public void ChangeScore (int scoreamount)
     { 
        Score = Score + scoreamount;
-       ScoreText.text = "Score:" + Score.ToString();
+       ScoreText.text = "Score: " + Score.ToString();
        
     }
      public void Damage()
  {
      currentHealth -= 1;
-    HealthText.text = "Lives:" + currentHealth.ToString();
- }
+    HealthText.text = "Lives: " + currentHealth.ToString();
+        audioSource.PlayOneShot(hitSound, 1);
+    }
 }
 
