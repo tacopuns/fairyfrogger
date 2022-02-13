@@ -8,7 +8,6 @@ public class SceneLoader : MonoBehaviour
 
     public GameObject StartPanel;
     public GameObject ControlsPanel;
-    public GameObject PausePanel;
 
     public void QuitGame()
     {
@@ -16,11 +15,6 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Quit!");
     }
 
-
-    public void Start()
-    {
-        PausePanel.SetActive(false);
-    }
 
     public void OpenPanel()
     {
@@ -43,15 +37,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    public void OpenPausePanel()
+    public void BacktoMainMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PausePanel.SetActive(true);
-        }
-
+        SceneManager.LoadScene("Start Menu");
     }
-
 
 }
 
