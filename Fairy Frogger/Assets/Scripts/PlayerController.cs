@@ -70,11 +70,16 @@ public class PlayerController : MonoBehaviour
     
     
     
-      if (Input.GetKey("escape"))
+      if (Input.GetKeyDown(KeyCode.Escape))
     
      {
         Application.Quit();
      }
+
+      if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     
     }
     public void ChangeScore (int scoreamount)
