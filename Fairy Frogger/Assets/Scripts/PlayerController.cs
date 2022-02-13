@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip winClip;
     public AudioClip loseClip;
     public AudioClip hitSound;
-   public GameObject points;
+    public GameObject points;
     public Text ScoreText;
     public int Score = 0;
     public bool gameOver = false;
@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
            audioSource.PlayOneShot (loseClip,2);
                     WinText.text = "You Lose!";
                     gameOver = true;
-
 		}
             
         if (Score == 1) 
@@ -80,5 +79,10 @@ public class PlayerController : MonoBehaviour
        ScoreText.text = "Score:" + Score.ToString();
        
     }
+     public void Damage()
+ {
+     currentHealth -= 1;
+    HealthText.text = "Lives:" + currentHealth.ToString();
+ }
 }
 

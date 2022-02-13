@@ -24,7 +24,7 @@ public class enemy : MonoBehaviour
      {
          if (collision.transform.name == "Player")
          {
-             collision.GetComponent<Health>().Damage();
+             collision.GetComponent<PlayerController>().Damage();
          }
      }
 }

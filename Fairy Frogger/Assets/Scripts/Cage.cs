@@ -2,18 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class Cage : MonoBehaviour
 {
  public Text WinText;
  public bool gameOver = false;
- 
- void OnCollisionEnter2D (Collision2D coll) 
- {
-    if(coll.collider.CompareTag("Player"))
+
+ public void OnTriggerEnter2D(Collider2D other)
     {
-        WinText.text = "You Win";
-         gameOver = true;
-    
+      {
+        PlayerController controller = other.GetComponent<PlayerController>();
+
+        if (controller != null)
+         {
+            WinText.text = "You Win!";
+            gameOver = true;
+            
+         }
+
+      }
     }
- }
+            
 }
+

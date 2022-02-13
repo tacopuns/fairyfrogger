@@ -435,7 +435,7 @@ MonoBehaviour:
   winClip: {fileID: 8300000, guid: 406e03310ade4774790719ac55afc37e, type: 3}
   loseClip: {fileID: 8300000, guid: 14aa2634f21730448bf553aaefbaadd0, type: 3}
   hitSound: {fileID: 8300000, guid: 88a6dc90fd2f25a4187eb70443a7f5a0, type: 3}
-  points: {fileID: 0}
+  points: {fileID: 2035082217}
   ScoreText: {fileID: 342421492}
   Score: 0
   gameOver: 0

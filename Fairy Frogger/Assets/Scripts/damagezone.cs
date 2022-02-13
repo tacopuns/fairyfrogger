@@ -19,7 +19,7 @@ public class damagezone : MonoBehaviour
      {
          if (collision.gameObject.name == "Player")
          {
-             collision.GetComponent<Health>().Damage();
+             collision.GetComponent<PlayerController>().Damage();
          }
      }
 }
