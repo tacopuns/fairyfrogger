@@ -15,9 +15,9 @@ public class damagezone : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
      {
-         if (collision.transform.name == "Player")
+         if (collision.gameObject.name == "Player")
          {
              collision.GetComponent<Health>().Damage();
          }

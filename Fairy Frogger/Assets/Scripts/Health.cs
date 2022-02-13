@@ -8,11 +8,11 @@ public class Health : MonoBehaviour
 	public int currentHealth = 3;
     public Text HealthText;
 
-	void Start ()
+	void Start()
 	{
 		HealthText.text = currentHealth.ToString();
 	}
- public void Damage ()
+ public void Damage()
  {
      currentHealth -= 1;
     
