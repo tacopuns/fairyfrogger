@@ -439,7 +439,8 @@ MonoBehaviour:
   ScoreText: {fileID: 342421492}
   Score: 0
   gameOver: 0
-  WinText: {fileID: 0}
+  WinPanel: {fileID: 0}
+  LosePanel: {fileID: 2074074743}
   currentHealth: 3
   HealthText: {fileID: 1211269186}
   runSpeed: 3
