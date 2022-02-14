@@ -5,7 +5,7 @@ Basic Requirements:
 
 
 Art:
-
+This game contains an animated player sprite, four enemy sprites, a basic particle effect, and two different backgrounds for each level. Frogger itself does not have very detailed characters, animations or environments so we took advantage of this by creating a stylized character and enemies to fit the theme that we were going for. The menu has art that is also contained in the game: the end goal so players can get an easy clue as to what they should look for at the end of the game. Frogger's minimalist style was a bit tricky to mimic for the environments since we didn't want the game to look empty so some liberties were taken when designing the levels.
 
 Code:
 
