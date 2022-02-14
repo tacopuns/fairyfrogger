@@ -13,11 +13,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip hitSound;
     public GameObject points;
     public Text ScoreText;
+    public Text CageText;
     public int Score = 0;
     public bool gameOver = false;
     public GameObject WinPanel;
     public GameObject LosePanel;
-
+     public int Cage = 0;
     public int currentHealth = 3;
     public Text HealthText;
     public static int level;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         HealthText.text = "Lives:" + currentHealth.ToString();
+        CageText.text = "Cage:" + Cage.ToString();
         LosePanel.SetActive(false);
         WinPanel.SetActive(false);
     }
@@ -68,7 +70,13 @@ public class PlayerController : MonoBehaviour
                     SceneManager.LoadScene("Lvl2");
                     level++;
                  }
-    
+        if (Cage == 1)
+           {
+                    audioSource.PlayOneShot(winClip, 1);
+                    WinPanel.SetActive(true);
+                    gameOver = true;
+            
+            }
     
     
       if (Input.GetKeyDown(KeyCode.Escape))
@@ -90,10 +98,16 @@ public class PlayerController : MonoBehaviour
        
     }
      public void Damage()
- {
+   {
      currentHealth -= 1;
-    HealthText.text = "Lives: " + currentHealth.ToString();
-        audioSource.PlayOneShot(hitSound, 1);
+     HealthText.text = "Lives: " + currentHealth.ToString();
+     audioSource.PlayOneShot(hitSound, 1);
+    }
+     public void Changecage (int cageamount)
+    { 
+       Cage = Cage + cageamount;
+       CageText.text = "Cage: " + Cage.ToString();
+       
     }
 }
 

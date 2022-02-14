@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Cage : MonoBehaviour
 {
- public Text WinText;
+ 
  public bool gameOver = false;
 
  public void OnTriggerEnter2D(Collider2D other)
@@ -14,12 +14,12 @@ public class Cage : MonoBehaviour
       {
         PlayerController controller = other.GetComponent<PlayerController>();
 
-        if (controller != null)
-         {
-            WinText.text = "You Win!";
-            gameOver = true;
+         if (controller != null)
+            {
+            controller.Changecage(1);
             
-         }
+            
+            }
 
       }
     }
