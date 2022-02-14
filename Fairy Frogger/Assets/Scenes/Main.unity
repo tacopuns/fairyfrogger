@@ -436,10 +436,12 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 88a6dc90fd2f25a4187eb70443a7f5a0, type: 3}
   points: {fileID: 2035082217}
   ScoreText: {fileID: 342421492}
+  CageText: {fileID: 0}
   Score: 0
   gameOver: 0
   WinPanel: {fileID: 0}
   LosePanel: {fileID: 2074074743}
+  Cage: 0
   currentHealth: 3
   HealthText: {fileID: 1211269186}
   runSpeed: 3
@@ -5687,7 +5689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &342421491
 RectTransform:
   m_ObjectHideFlags: 0
