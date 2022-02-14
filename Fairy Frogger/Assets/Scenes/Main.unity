@@ -431,8 +431,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   collectibleSound: {fileID: 8300000, guid: f5d89616ef1f53a45808bf203e3e41cf, type: 3}
-  winClip: {fileID: 8300000, guid: 406e03310ade4774790719ac55afc37e, type: 3}
-  loseClip: {fileID: 8300000, guid: 14aa2634f21730448bf553aaefbaadd0, type: 3}
+  winClip: {fileID: 8300000, guid: e593fdfb2e0cd744b8ccd3b9d5557950, type: 3}
+  loseClip: {fileID: 8300000, guid: 7ebcd0761e558de4c8e74fcd5dc89758, type: 3}
   hitSound: {fileID: 8300000, guid: 88a6dc90fd2f25a4187eb70443a7f5a0, type: 3}
   points: {fileID: 2035082217}
   ScoreText: {fileID: 342421492}
